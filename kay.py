@@ -3,6 +3,7 @@ import asyncio
 import datetime
 import pytz
 import openpyxl
+import os
 
 client = discord.Client()
 
@@ -76,5 +77,6 @@ async def on_message(message):
         embed.set_thumbnail(url=message.author.avatar_url)
         await message.channel.send (embed=embed)
         await message.delete()
-
-client.run('ODIxNjkwMDg0NTQ5MTk3ODU1.YFHYhg.gBZ1Wy1QevB5vg7Vt7Qsc_m1Y5U')
+        
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
